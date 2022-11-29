@@ -1,27 +1,37 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include <string.h>
-#define MAX_NAME 10
+#include <math.h>
+ 
 
 /* run this program using the console pauser or add your own getch, system("pause") or input loop */
 
-struct student{
-	int id;
-	char name[MAX_NAME];
-	double grade;
+struct point{
+	int x;
+	int y;
 	
-};	
+};
+	
 int main(int argc, char *argv[]) {
 	
-	struct student s1;
+	struct point p1,p2;
+	int xdiff, ydiff;
+	double dist;
 	
-	s1.id = 1234;
-	strcpy(s1.name,"seungwon");
-	s1.grade = 4.3;
+	printf("input p1 coordinate(x y):");
+	scanf("%d %d" ,&p1.x, &p1.y);
 	
-	printf("ID : %i\n", s1.id);
-	printf("NAME : %s\n",s1.name);
-	printf("GRADE : %lf\n", s1.grade);
+	
+	printf("input p2 coordinate(x y):");
+	scanf("%d %d", &p2.x, &p2.y);
+	
+	xdiff = p2.x - p1.x;
+	ydiff = p2.y - p1.y;
+	
+	dist = sqrt((xdiff*xdiff)+ (ydiff*ydiff));
+	
+	
+	printf("distance: %lf", dist);
+	
 	
 	return 0;
 }
